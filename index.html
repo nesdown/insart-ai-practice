@@ -164,6 +164,69 @@
       pointer-events: none;
     }
 
+    /* ─── Mobile hamburger ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      margin-left: auto;
+      z-index: 60;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--s300);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s, background 0.2s;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--accent); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--accent); }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 55;
+      background: rgba(10, 15, 30, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 80px 32px 48px;
+    }
+
+    .nav-drawer.open { display: flex; }
+
+    .nav-drawer a {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--s300);
+      text-decoration: none;
+      padding: 10px 0;
+      letter-spacing: -0.01em;
+      transition: color 0.15s;
+    }
+
+    .nav-drawer a:hover { color: var(--s50); }
+
+    .nav-drawer .drawer-cta {
+      margin-top: 28px;
+      font-size: 15px;
+    }
+
     /* Nav */
     .nav-links {
       display: flex;
@@ -1520,8 +1583,12 @@
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .nav-ext { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-actions { display: none; }
 
       .hero { padding: 120px 20px 0; }
+      /* prevent glow blobs from causing overflow */
+      .hero-glow-1, .hero-glow-2 { display: none; }
 
       .powerhouse {
         padding-left: 20px;
@@ -1544,20 +1611,21 @@
       .stat-cell:nth-child(4) { border-top: 1px solid var(--n700); border-right: none; }
 
       .partners-inner {
-        padding: 36px 20px 40px;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        column-gap: 20px;
-        row-gap: 28px;
+        padding: 28px 20px 32px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 12px;
+        row-gap: 20px;
       }
 
       .partner-logo {
-        min-height: 48px;
-        padding: 12px 10px;
+        min-height: 44px;
+        padding: 10px 8px;
       }
 
       .partner-logo svg,
       .partner-logo img {
-        max-height: 24px;
+        max-height: 22px;
+        max-width: 100%;
       }
 
       .header-inner {
@@ -1996,26 +2064,27 @@
     }
 
     /* ─── SCROLL REVEAL ─── */
-    [data-reveal] {
+    /* Only apply reveal hiding when JS has confirmed it's safe to do so */
+    body.js-reveal-ready [data-reveal] {
       opacity: 0;
       transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
                   transform 0.7s cubic-bezier(0.22,1,0.36,1);
     }
 
-    [data-reveal="up"]    { transform: translateY(36px); }
-    [data-reveal="down"]  { transform: translateY(-24px); }
-    [data-reveal="left"]  { transform: translateX(-40px); }
-    [data-reveal="right"] { transform: translateX(40px); }
-    [data-reveal="scale"] { transform: scale(0.92); }
-    [data-reveal="fade"]  { transform: none; }
+    body.js-reveal-ready [data-reveal="up"]    { transform: translateY(36px); }
+    body.js-reveal-ready [data-reveal="down"]  { transform: translateY(-24px); }
+    body.js-reveal-ready [data-reveal="left"]  { transform: translateX(-40px); }
+    body.js-reveal-ready [data-reveal="right"] { transform: translateX(40px); }
+    body.js-reveal-ready [data-reveal="scale"] { transform: scale(0.92); }
+    body.js-reveal-ready [data-reveal="fade"]  { transform: none; }
 
     [data-reveal].revealed {
-      opacity: 1;
-      transform: none;
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     /* stagger siblings via --delay custom prop */
-    [data-reveal][style*="--d"] {
+    body.js-reveal-ready [data-reveal][style*="--d"] {
       transition-delay: var(--d, 0s);
     }
 
@@ -2234,9 +2303,18 @@
       .stat-unit { font-size: 22px; }
       .partners-inner {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 14px;
-        row-gap: 22px;
-        padding: 32px 16px 36px;
+        column-gap: 10px;
+        row-gap: 16px;
+        padding: 24px 16px 28px;
+      }
+      .partner-logo {
+        min-height: 40px;
+        padding: 8px 6px;
+      }
+      .partner-logo svg,
+      .partner-logo img {
+        max-height: 20px;
+        max-width: 100%;
       }
       .usecases-inner { padding: 0 16px; }
       .usecase-card { flex: 0 0 min(300px, 90vw); }
@@ -2313,8 +2391,22 @@
         <a href="#proposal" class="btn-primary btn-sm">Get an AI Plan →</a>
       </div>
 
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
   </header>
+
+  <!-- Mobile nav drawer -->
+  <nav class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#use-cases">Case Studies</a>
+    <a href="#testimonials">Why INSART</a>
+    <a href="#outcomes">AI Integration</a>
+    <a href="#two-outcomes">Outcomes</a>
+    <a href="#proposal" class="btn-primary drawer-cta">Get an AI Plan →</a>
+  </nav>
 
   <!-- ─── HERO ─── -->
   <section class="hero">
@@ -3045,11 +3137,47 @@
 
   <!-- ─── SCRIPTS ─── -->
   <script>
+    /* ── Mobile hamburger ── */
+    (function () {
+      const btn    = document.getElementById('nav-hamburger');
+      const drawer = document.getElementById('nav-drawer');
+      if (!btn || !drawer) return;
+
+      function openDrawer() {
+        btn.classList.add('open');
+        drawer.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        btn.classList.remove('open');
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      btn.addEventListener('click', () => {
+        btn.classList.contains('open') ? closeDrawer() : openDrawer();
+      });
+
+      drawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', closeDrawer);
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+    })();
+
     /* ── Scroll-reveal ── */
     (function () {
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const els = document.querySelectorAll('[data-reveal]');
       if (reduced) { els.forEach(el => el.classList.add('revealed')); return; }
+
+      /* Mark body so CSS hides elements — but only after we've set up the observer
+         so elements already in view get revealed before the first paint sees them hidden */
+      document.body.classList.add('js-reveal-ready');
 
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
@@ -3058,7 +3186,7 @@
             obs.unobserve(e.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
       els.forEach(el => obs.observe(el));
     })();
