@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="description" content="Inline vision QC for prepared foods—defects caught before packaging, with batch-level traceability for audits."/>
+  <title>Case Study · Food Production · Vision QC | INSART AI</title>
+  <link rel="canonical" href="https://insart.com/ai/cases/food-line-vision-qc.html"/>
+  <meta name="theme-color" content="#0a0f1e"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="INSART"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://insart.com/ai/cases/food-line-vision-qc.html"/>
+  <meta property="og:title" content="Case Study · Food Production · Vision QC | INSART AI"/>
+  <meta property="og:description" content="Inline vision QC for prepared foods—defects caught before packaging, with batch-level traceability for audits."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Food production line — case study hero"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@insart_io"/>
+  <meta name="twitter:title" content="Case Study · Food Production · Vision QC | INSART AI"/>
+  <meta name="twitter:description" content="Inline vision QC for prepared foods—defects caught before packaging, with batch-level traceability for audits."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta name="twitter:image:alt" content="Food production line — case study hero"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="case-study.css"/>
+  <script defer src="case-study.js"></script>
+</head>
+<body>
+
+  <header class="cs-header">
+    <a class="cs-back" href="../index.html#use-cases">← Back to case studies</a>
+    <a class="cs-cta-head" href="../index.html#proposal">Get an AI Plan →</a>
+  </header>
+
+  <section class="cs-hero" style="background-image:url('https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')">
+    <div class="cs-hero-inner">
+      <p class="cs-kicker">Food production · RTE meals &amp; cold chain</p>
+      <h1 class="cs-h1">Defects stopped on the belt—not at the retailer dock</h1>
+      <p class="cs-lede">A national prepared-foods brand deployed inline vision on high-speed portioning lines. Every tray got a pass/fail score, heat-mapped to the exact camera and minute—so QA, not night shift, owned the narrative when questions arose.</p>
+    </div>
+  </section>
+
+  <div class="cs-wrap">
+    <div class="cs-metrics">
+      <div class="cs-metric"><span class="cs-metric-val">0</span><span class="cs-metric-lbl">Class-I recalls (18 mo post go-live)</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">94<em>%</em></span><span class="cs-metric-lbl">Defect catch before packaging</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">3.2<em>s</em></span><span class="cs-metric-lbl">P95 inference latency per tray</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">$1.1<em>M</em></span><span class="cs-metric-lbl">Avoided scrap &amp; rework (annualized)</span></div>
+    </div>
+
+    <section class="cs-section">
+      <h2>Snapshot</h2>
+      <p><strong>Who:</strong> USDA-inspected RTE facility network (anonymized) — three plants, shared SKU catalog.</p>
+      <p><strong>Problem:</strong> Human spot checks missed intermittent seal issues; downstream x-ray was too late to save the batch.</p>
+      <p><strong>What we shipped:</strong> Multi-camera edge boxes, synchronized triggers from encoders, and a batch genealogy service that ties frames to lot codes.</p>
+    </section>
+
+    <div class="cs-two">
+      <div class="cs-panel">
+        <h3>Challenge</h3>
+        <p>Reflective film and steam confused early models; false rejects angered ops. Precision had to climb before recall risk budged.</p>
+      </div>
+      <div class="cs-panel">
+        <h3>Approach</h3>
+        <p>We started on the worst SKU by complaint rate, froze lighting angles, and used synthetic defects from the tooling vendor to augment rare classes.</p>
+      </div>
+    </div>
+
+    <section class="cs-section" style="margin-top:36px;">
+      <h2>Solution components</h2>
+      <div class="cs-components">
+        <div class="cs-comp"><strong>Edge inference</strong><span>TensorRT-optimized models; NTP-locked frame timestamps.</span></div>
+        <div class="cs-comp"><strong>Line HMI</strong><span>Traffic-light stack lights + two-tap override with supervisor PIN.</span></div>
+        <div class="cs-comp"><strong>Genealogy service</strong><span>Lot + tray ID + frame URI + model version immutable store.</span></div>
+        <div class="cs-comp"><strong>Retrain loop</strong><span>Weekly hard-negative mining from QA holds.</span></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2>Rollout timeline</h2>
+      <div class="cs-timeline">
+        <div class="cs-tl-item"><h4>Weeks 1–4 · Line instrumentation</h4><p>Encoder wiring, lighting baffles, baseline image quality SLAs.</p></div>
+        <div class="cs-tl-item"><h4>Weeks 5–10 · Model hardening</h4><p>Precision/recall targets signed by QA and plant manager.</p></div>
+        <div class="cs-tl-item"><h4>Weeks 11–14 · Regulatory packet</h4><p>Validation scripts, change control, electronic signatures.</p></div>
+        <div class="cs-tl-item"><h4>Month 6 · Replication kit</h4><p>Playbooks exported to sister plants with hardware bill of materials.</p></div>
+      </div>
+    </section>
+
+    <div class="cs-gallery">
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="800" height="500" alt="Fresh food ingredients"/>
+      <div class="cs-gallery-col">
+        <img src="https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Food production facility"/>
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Food production context"/>
+      </div>
+    </div>
+
+    <blockquote class="cs-quote">
+      <p>“Retail audits used to keep me up at night. Now I pull the tray ID and we show exactly what the cameras saw before it ever left our building.”</p>
+      <cite>— Director of Food Safety &amp; Quality, anonymized</cite>
+    </blockquote>
+
+    <section class="cs-section">
+      <h2>Results &amp; controls</h2>
+      <ul>
+        <li>Zero class-I recalls in the first 18 months of production deployment.</li>
+        <li>94% of visually confirmed defects intercepted pre-packaging vs. baseline manual sampling.</li>
+        <li>Customer complaints for seal integrity −67% YoY on monitored SKUs.</li>
+        <li>Full trace packet generated in &lt;90 seconds for mock recall drills.</li>
+      </ul>
+    </section>
+
+    <div class="cs-footer-cta">
+      <p>Design vision QC that satisfies both ops and auditors.</p>
+      <a class="cs-btn" href="../index.html#proposal">Get an AI Plan →</a>
+    </div>
+
+    <p class="cs-disclaimer">Representative scenario for marketing purposes. Regulatory submissions vary by jurisdiction and product category.</p>
+  </div>
+
+</body>
+</html>

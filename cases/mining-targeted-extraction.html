@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="description" content="Geology-aware drill targeting and live pit routing—fewer meters for the same tonnage, with safety overlays for haul roads."/>
+  <title>Case Study · Mining · Targeted Extraction | INSART AI</title>
+  <link rel="canonical" href="https://insart.com/ai/cases/mining-targeted-extraction.html"/>
+  <meta name="theme-color" content="#0a0f1e"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="INSART"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://insart.com/ai/cases/mining-targeted-extraction.html"/>
+  <meta property="og:title" content="Case Study · Mining · Targeted Extraction | INSART AI"/>
+  <meta property="og:description" content="Geology-aware drill targeting and live pit routing—fewer meters for the same tonnage, with safety overlays for haul roads."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Open-pit mining — case study hero"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@insart_io"/>
+  <meta name="twitter:title" content="Case Study · Mining · Targeted Extraction | INSART AI"/>
+  <meta name="twitter:description" content="Geology-aware drill targeting and live pit routing—fewer meters for the same tonnage, with safety overlays for haul roads."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta name="twitter:image:alt" content="Open-pit mining — case study hero"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="case-study.css"/>
+  <script defer src="case-study.js"></script>
+</head>
+<body>
+
+  <header class="cs-header">
+    <a class="cs-back" href="../index.html#use-cases">← Back to case studies</a>
+    <a class="cs-cta-head" href="../index.html#proposal">Get an AI Plan →</a>
+  </header>
+
+  <section class="cs-hero" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')">
+    <div class="cs-hero-inner">
+      <p class="cs-kicker">Mining · Open pit &amp; grade control</p>
+      <h1 class="cs-h1">Fewer meters, better tons—without betting the blast pattern on gut feel</h1>
+      <p class="cs-lede">An iron producer fused blasthole assays, structural models, and shovel telemetry into a drill targeting stack. Engineers saw where grade thickened before committing powder factor; dispatch got live haul paths that skirted geotech risk zones.</p>
+    </div>
+  </section>
+
+  <div class="cs-wrap">
+    <div class="cs-metrics">
+      <div class="cs-metric"><span class="cs-metric-val">31<em>%</em></span><span class="cs-metric-lbl">Better mass in ore envelope</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">18<em>%</em></span><span class="cs-metric-lbl">Less waste tons hauled</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">7<em>%</em></span><span class="cs-metric-lbl">Fuel reduction on haul fleet</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">42</span><span class="cs-metric-lbl">Days from kickoff to first blast using new targets</span></div>
+    </div>
+
+    <section class="cs-section">
+      <h2>Snapshot</h2>
+      <p><strong>Who:</strong> Open-pit iron operation (anonymized) — mixed fleet, two shovels feeding three cells.</p>
+      <p><strong>Problem:</strong> Grade control models refreshed too slowly; shovel operators chased visual color that didn’t match the block model.</p>
+      <p><strong>What we shipped:</strong> Nightly block model fusion, uncertainty surfaces for planners, and a tablet view that translated geostatistics into simple “drill here first” bands.</p>
+    </section>
+
+    <div class="cs-two">
+      <div class="cs-panel">
+        <h3>Challenge</h3>
+        <p>Mine engineers were skeptical of black-box ML—anything that couldn’t show variograms and search parameters was dead on arrival.</p>
+      </div>
+      <div class="cs-panel">
+        <h3>Approach</h3>
+        <p>We wrapped models in the same QC gates their consultants already used, and co-signed the first six patterns with the external geology firm.</p>
+      </div>
+    </div>
+
+    <section class="cs-section" style="margin-top:36px;">
+      <h2>Solution components</h2>
+      <div class="cs-components">
+        <div class="cs-comp"><strong>Assay + sensor fusion</strong><span>Blasthole chemistry + shovel payload estimates + moisture corrections.</span></div>
+        <div class="cs-comp"><strong>Uncertainty maps</strong><span>Heatmaps for planners; export to mine planning DTM tools.</span></div>
+        <div class="cs-comp"><strong>Haul routing</strong><span>Live geofence overlays for slump-prone benches after rain events.</span></div>
+        <div class="cs-comp"><strong>Governance</strong><span>Model registry with sign-off roles: geology, geotech, VP ops.</span></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2>Rollout timeline</h2>
+      <div class="cs-timeline">
+        <div class="cs-tl-item"><h4>Weeks 1–3 · Data contracts</h4><p>Normalized collar tables, fixed CRS drift between survey vendors.</p></div>
+        <div class="cs-tl-item"><h4>Weeks 4–8 · Shadow patterns</h4><p>Printed maps for bench meetings; no blast changes yet.</p></div>
+        <div class="cs-tl-item"><h4>Weeks 9–12 · Controlled blasts</h4><p>A/B sectors with post-blast muckpile sampling.</p></div>
+        <div class="cs-tl-item"><h4>Quarter 2 · Operations embed</h4><p>INSART engineer on-site two days/week during wet season.</p></div>
+      </div>
+    </section>
+
+    <div class="cs-gallery">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="800" height="500" alt="Mining excavator in open pit"/>
+      <div class="cs-gallery-col">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Heavy equipment at mine site"/>
+        <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Industrial materials handling"/>
+      </div>
+    </div>
+
+    <blockquote class="cs-quote">
+      <p>“The block model finally met the muckpile. We still blast—but we aim with both eyes open now.”</p>
+      <cite>— Chief Geologist, anonymized operation</cite>
+    </blockquote>
+
+    <section class="cs-section">
+      <h2>Results &amp; controls</h2>
+      <ul>
+        <li>31% more mass inside the ore envelope for the same drilled meters (bench trial cohort).</li>
+        <li>Waste tons to stockpile −18%; crusher feed variability down measurably week-over-week.</li>
+        <li>Haul fleet fuel −7% after routing avoided rework loops on wet days.</li>
+        <li>Every pattern stored with variography parameters and approver signatures.</li>
+      </ul>
+    </section>
+
+    <div class="cs-footer-cta">
+      <p>Connect block models, telemetry, and dispatch without losing geotech rigor.</p>
+      <a class="cs-btn" href="../index.html#proposal">Get an AI Plan →</a>
+    </div>
+
+    <p class="cs-disclaimer">Representative scenario for marketing purposes. Mining economics and permitting contexts vary widely by jurisdiction.</p>
+  </div>
+
+</body>
+</html>

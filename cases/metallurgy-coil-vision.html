@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="description" content="How a multi-plant steel processor used computer vision and ERP automation to cut write-offs and reclaim floor time."/>
+  <title>Case Study · Metallurgy · Coil &amp; Stock Vision | INSART AI</title>
+  <link rel="canonical" href="https://insart.com/ai/cases/metallurgy-coil-vision.html"/>
+  <meta name="theme-color" content="#0a0f1e"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="INSART"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://insart.com/ai/cases/metallurgy-coil-vision.html"/>
+  <meta property="og:title" content="Case Study · Metallurgy · Coil &amp; Stock Vision | INSART AI"/>
+  <meta property="og:description" content="How a multi-plant steel processor used computer vision and ERP automation to cut write-offs and reclaim floor time."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1697698532602-ccf880036281?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Metallurgy and steel operations — case study hero"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@insart_io"/>
+  <meta name="twitter:title" content="Case Study · Metallurgy · Coil &amp; Stock Vision | INSART AI"/>
+  <meta name="twitter:description" content="How a multi-plant steel processor used computer vision and ERP automation to cut write-offs and reclaim floor time."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1697698532602-ccf880036281?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta name="twitter:image:alt" content="Metallurgy and steel operations — case study hero"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="case-study.css"/>
+  <script defer src="case-study.js"></script>
+</head>
+<body>
+
+  <header class="cs-header">
+    <a class="cs-back" href="../index.html#use-cases">← Back to case studies</a>
+    <a class="cs-cta-head" href="../index.html#proposal">Get an AI Plan →</a>
+  </header>
+
+  <section class="cs-hero" style="background-image:url('https://images.unsplash.com/photo-1697698532602-ccf880036281?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')">
+    <div class="cs-hero-inner">
+      <p class="cs-kicker">Metallurgy · Cold rolling &amp; coil logistics</p>
+      <h1 class="cs-h1">Four plants, one truth for every ton on the floor</h1>
+      <p class="cs-lede">A North American steel service center rolled out AI-assisted coil identification, yard reconciliation, and exception routing—so planners stopped fighting spreadsheets and the floor stopped second-guessing the WMS.</p>
+    </div>
+  </section>
+
+  <div class="cs-wrap">
+    <div class="cs-metrics">
+      <div class="cs-metric"><span class="cs-metric-val">$2.4<em>M</em></span><span class="cs-metric-lbl">Operating cost avoided / yr</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">18<em>k</em></span><span class="cs-metric-lbl">Manual tally hrs / quarter removed</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">41<em>%</em></span><span class="cs-metric-lbl">Fewer stock variance events</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">9</span><span class="cs-metric-lbl">Weeks to first production pilot</span></div>
+    </div>
+
+    <section class="cs-section">
+      <h2>Snapshot</h2>
+      <p><strong>Who:</strong> Integrated steel service center (anonymized) — four sites, shared inventory, high SKU mix.</p>
+      <p><strong>Problem:</strong> Coil tags damaged in the yard, partial picks without photo proof, and nightly reconciliations that never quite matched the ERP.</p>
+      <p><strong>What we shipped:</strong> Edge vision models for tag &amp; stencil OCR at receiving, a reconciliation service that scores WMS vs. scale vs. imagery, and human-in-the-loop queues for low-confidence reads.</p>
+    </section>
+
+    <div class="cs-two">
+      <div class="cs-panel">
+        <h3>Challenge</h3>
+        <p>Operations leaders could see shrink in the financials but not attribute it to a lane, shift, or carrier window. Auditors wanted lineage from weighbridge to bay.</p>
+      </div>
+      <div class="cs-panel">
+        <h3>Approach</h3>
+        <p>We instrumented the highest-variance choke points first (receiving + transfer aisles), froze scope for a nine-week pilot, and wired outputs only into systems teams already trusted.</p>
+      </div>
+    </div>
+
+    <section class="cs-section" style="margin-top:36px;">
+      <h2>Solution components</h2>
+      <div class="cs-components">
+        <div class="cs-comp"><strong>Edge vision pods</strong><span>OCR + damage scoring on incoming coils; offline queue when uplink drops.</span></div>
+        <div class="cs-comp"><strong>Reconciliation engine</strong><span>Probabilistic match across WMS events, crane GPS, and imagery timestamps.</span></div>
+        <div class="cs-comp"><strong>Exception desk UI</strong><span>Two-click confirm / reject with reason codes feeding model retraining.</span></div>
+        <div class="cs-comp"><strong>ERP adapters</strong><span>Idempotent postings into inventory modules; audit trail per coil ID.</span></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2>Rollout timeline</h2>
+      <div class="cs-timeline">
+        <div class="cs-tl-item"><h4>Weeks 1–2 · Discovery</h4><p>Shadowed receiving crews, mapped 14 exception types, baseline variance by site.</p></div>
+        <div class="cs-tl-item"><h4>Weeks 3–6 · Pilot build</h4><p>Two lanes live with shadow mode (AI suggestions not auto-posting).</p></div>
+        <div class="cs-tl-item"><h4>Weeks 7–9 · Hardening</h4><p>Latency SLOs met, security review passed, cutover for auto-post on &gt;92% confidence.</p></div>
+        <div class="cs-tl-item"><h4>Months 4–6 · Scale</h4><p>Rolled to remaining plants; integrated weighbridge CSV drops.</p></div>
+      </div>
+    </section>
+
+    <div class="cs-gallery">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="800" height="500" alt="Steel warehouse aisle"/>
+      <div class="cs-gallery-col">
+        <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Industrial metal structure"/>
+        <img src="https://images.unsplash.com/photo-1697698532602-ccf880036281?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Steel coil storage"/>
+      </div>
+    </div>
+
+    <blockquote class="cs-quote">
+      <p>“For the first time we could show finance exactly which movements cleared and which ones didn’t—without adding headcount at the gate.”</p>
+      <cite>— VP Operations, anonymized program sponsor</cite>
+    </blockquote>
+
+    <section class="cs-section">
+      <h2>Results &amp; controls</h2>
+      <ul>
+        <li>Write-offs tied to mis-identified coils fell 41% YoY in the pilot corridor.</li>
+        <li>Night-shift tally work dropped ~18k hours per quarter across four sites.</li>
+        <li>99.2% of auto-posted transactions required zero rework after month five.</li>
+        <li>Board-ready audit pack: immutable event ledger + confidence histograms per site.</li>
+      </ul>
+    </section>
+
+    <div class="cs-footer-cta">
+      <p>Want a similar diagnostic on your yards and mills?</p>
+      <a class="cs-btn" href="../index.html#proposal">Get an AI Plan →</a>
+    </div>
+
+    <p class="cs-disclaimer">Representative scenario for marketing purposes. Company name, figures, and timeline are illustrative composites and not attributable to a single public customer without a signed release.</p>
+  </div>
+
+</body>
+</html>

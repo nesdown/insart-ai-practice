@@ -1,0 +1,30 @@
+# INSART — AI Growth Engineering (Industrial AI)
+
+> INSART AI Growth Engineering helps industrial and operations-heavy businesses find where AI pays for itself, then designs and ships the integration—MES, ERP, vision, telemetry, and workflow automation—with a clear path to measurable outcomes. A free, structured proposal (about four pages) is offered within roughly five business days for qualified engagements.
+
+INSART is the same engineering organization known for deep fintech work; this offering is framed for manufacturing, metallurgy, agriculture, logistics, food production, mining, oil & gas, and adjacent capital-intensive sectors. It emphasizes production systems and operator-facing tools—not generic slide-only AI strategy.
+
+**Not in scope:** consumer growth retainers; “ChatGPT for everyone” without integration into systems of record; guarantees of funding or partnerships.
+
+## Main
+
+- [AI Growth Engineering landing](https://insart.com/ai/): Positioning, outcomes, credibility, case-study carousel, testimonials, and CTA to request an AI plan.
+
+## Case studies
+
+- [Metallurgy — coil & stock vision](https://insart.com/ai/cases/metallurgy-coil-vision.html): Multi-plant steel / service center; vision + WMS; coil ID and yard reconciliation.
+- [Manufacturing — predictive maintenance](https://insart.com/ai/cases/manufacturing-predictive-maintenance.html): Many lines; vibration, temperature, and MES signals into one ranked maintenance queue.
+- [Agriculture — crop intelligence](https://insart.com/ai/cases/agriculture-crop-intelligence.html): Imagery and soil sensors; early stress and pest risk.
+- [Logistics — fleet routing](https://insart.com/ai/cases/logistics-fleet-routing.html): LTL routing vs traffic, dwell, and dock constraints.
+- [Food production — vision QC](https://insart.com/ai/cases/food-line-vision-qc.html): Inline vision QC and batch traceability.
+- [Mining — targeted extraction](https://insart.com/ai/cases/mining-targeted-extraction.html): Geology-aware targeting and pit routing with safety overlays.
+- [Oil & gas — pipeline monitoring](https://insart.com/ai/cases/oilgas-pipeline-monitoring.html): Infrared and anomaly models along long right-of-way.
+
+## Contact
+
+- [INSART website](https://insart.com/): Hub, philosophy, programs, and contact paths.
+
+## Optional
+
+- [INSART fintech case studies index](https://insart.com/category/case-studies/): Original writeups; AI Practice case pages are reframed industrial narratives inspired by that delivery experience.
+- [INSART philosophy](https://insart.com/philosophy/): Company story and approach.

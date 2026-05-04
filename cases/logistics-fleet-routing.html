@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="description" content="AI-sequenced routes for a regional LTL fleet—fuel, dwell time, and missed windows tracked against live traffic and dock constraints."/>
+  <title>Case Study · Logistics · Fleet Routing | INSART AI</title>
+  <link rel="canonical" href="https://insart.com/ai/cases/logistics-fleet-routing.html"/>
+  <meta name="theme-color" content="#0a0f1e"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="INSART"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://insart.com/ai/cases/logistics-fleet-routing.html"/>
+  <meta property="og:title" content="Case Study · Logistics · Fleet Routing | INSART AI"/>
+  <meta property="og:description" content="AI-sequenced routes for a regional LTL fleet—fuel, dwell time, and missed windows tracked against live traffic and dock constraints."/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Logistics and fleet — case study hero"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@insart_io"/>
+  <meta name="twitter:title" content="Case Study · Logistics · Fleet Routing | INSART AI"/>
+  <meta name="twitter:description" content="AI-sequenced routes for a regional LTL fleet—fuel, dwell time, and missed windows tracked against live traffic and dock constraints."/>
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=85"/>
+  <meta name="twitter:image:alt" content="Logistics and fleet — case study hero"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="case-study.css"/>
+  <script defer src="case-study.js"></script>
+</head>
+<body>
+
+  <header class="cs-header">
+    <a class="cs-back" href="../index.html#use-cases">← Back to case studies</a>
+    <a class="cs-cta-head" href="../index.html#proposal">Get an AI Plan →</a>
+  </header>
+
+  <section class="cs-hero" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')">
+    <div class="cs-hero-inner">
+      <p class="cs-kicker">Logistics · Regional LTL &amp; cross-dock</p>
+      <h1 class="cs-h1">Fewer miles, tighter windows, happier receivers</h1>
+      <p class="cs-lede">A mid-market carrier fused TMS stops, live traffic, and dock appointment APIs into a dynamic sequencing layer—drivers got turn-by-turn that respected HOS, while planners saw which lanes leaked margin every morning.</p>
+    </div>
+  </section>
+
+  <div class="cs-wrap">
+    <div class="cs-metrics">
+      <div class="cs-metric"><span class="cs-metric-val">$890<em>K</em></span><span class="cs-metric-lbl">Fuel &amp; idle savings (annualized)</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">19<em>%</em></span><span class="cs-metric-lbl">Improvement on on-time delivery</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">11<em>min</em></span><span class="cs-metric-lbl">Avg dwell reduction per stop</span></div>
+      <div class="cs-metric"><span class="cs-metric-val">2.4<em>M</em></span><span class="cs-metric-lbl">Stops scored in the first year</span></div>
+    </div>
+
+    <section class="cs-section">
+      <h2>Snapshot</h2>
+      <p><strong>Who:</strong> Regional LTL network (anonymized) — 340 power units, 19 terminals.</p>
+      <p><strong>Problem:</strong> Static routes aged by lunch; dispatchers patched with phone calls; fuel spiked whenever a bridge closed.</p>
+      <p><strong>What we shipped:</strong> Continuous VRP-style re-optimization windows, driver tablet deltas every 15 minutes, and exception playbooks when docks slipped.</p>
+    </section>
+
+    <div class="cs-two">
+      <div class="cs-panel">
+        <h3>Challenge</h3>
+        <p>Drivers distrusted “black box” routing after a failed pilot three years earlier. Transparency and rollback were non-negotiable.</p>
+      </div>
+      <div class="cs-panel">
+        <h3>Approach</h3>
+        <p>We shadowed dispatch for six weeks, mirrored their heuristics in software, then beat them on held-out Fridays before any cutover.</p>
+      </div>
+    </div>
+
+    <section class="cs-section" style="margin-top:36px;">
+      <h2>Solution components</h2>
+      <div class="cs-components">
+        <div class="cs-comp"><strong>Graph builder</strong><span>Stops, locks, HOS arcs, and appointment hard windows as constraints.</span></div>
+        <div class="cs-comp"><strong>Traffic &amp; weather feeds</strong><span>Blended ETA confidence bands; automatic slack insertion.</span></div>
+        <div class="cs-comp"><strong>Driver UX</strong><span>Explains “why this order changed” in one sentence + map diff.</span></div>
+        <div class="cs-comp"><strong>Finance bridge</strong><span>Miles, gallons, and delay minutes pushed nightly to FP&amp;A cubes.</span></div>
+      </div>
+    </section>
+
+    <section class="cs-section">
+      <h2>Rollout timeline</h2>
+      <div class="cs-timeline">
+        <div class="cs-tl-item"><h4>Month 1 · Digital twin</h4><p>Replayed 11 months of TMS history; found 7 systematic detour patterns.</p></div>
+        <div class="cs-tl-item"><h4>Month 2 · Shadow Friday</h4><p>Human dispatch vs. model side-by-side scorecards.</p></div>
+        <div class="cs-tl-item"><h4>Months 3–4 · Live in two districts</h4><p>Rollback switch always one tap away for terminal managers.</p></div>
+        <div class="cs-tl-item"><h4>Month 6+ · Network</h4><p>Dock APIs added for top 40 shippers by volume.</p></div>
+      </div>
+    </section>
+
+    <div class="cs-gallery">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" width="800" height="500" alt="Warehouse and logistics storage"/>
+      <div class="cs-gallery-col">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Shipping containers at port"/>
+        <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&amp;fit=crop&amp;w=600&amp;q=80" width="600" height="240" alt="Cargo and logistics dock"/>
+      </div>
+    </div>
+
+    <blockquote class="cs-quote">
+      <p>“Drivers stopped arguing with dispatch when the map showed the same math they were already doing in their heads—just faster.”</p>
+      <cite>— VP Network Operations, anonymized carrier</cite>
+    </blockquote>
+
+    <section class="cs-section">
+      <h2>Results &amp; controls</h2>
+      <ul>
+        <li>Fuel + idle savings annualized to $890K in the first full quarter post cutover.</li>
+        <li>OTD +19 pts on lanes with dock integrations vs. control lanes.</li>
+        <li>Customer chargebacks for late delivery −31% by dollar value.</li>
+        <li>Every re-seq stores constraint snapshot for disputes and insurance.</li>
+      </ul>
+    </section>
+
+    <div class="cs-footer-cta">
+      <p>Stress-test your TMS data against modern routing intelligence.</p>
+      <a class="cs-btn" href="../index.html#proposal">Get an AI Plan →</a>
+    </div>
+
+    <p class="cs-disclaimer">Representative scenario for marketing purposes. Savings depend on network topology, union rules, and equipment mix.</p>
+  </div>
+
+</body>
+</html>
