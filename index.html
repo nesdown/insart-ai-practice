@@ -572,6 +572,7 @@
     .partners {
       border-bottom: 1px solid var(--n700);
       background: var(--bg2);
+      overflow: hidden;
     }
 
     .partners-inner {
@@ -591,10 +592,8 @@
     /* Equal slots: same outer box; inner padding = consistent “air” around every mark */
     .partner-logo {
       width: 100%;
-      max-width: none;
-      min-height: 52px;
-      height: auto;
-      padding: 14px clamp(10px, 1.2vw, 18px);
+      height: 52px;
+      padding: 8px 6px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -602,6 +601,7 @@
       transition: opacity 0.2s;
       min-width: 0;
       box-sizing: border-box;
+      overflow: hidden;
     }
 
     .partner-logo:hover { opacity: 1; }
@@ -609,13 +609,11 @@
     .partner-logo svg,
     .partner-logo img {
       display: block;
-      max-height: 28px;
+      height: 22px;
       width: auto;
-      /* Cap width so wide marks don’t eat the whole column; keeps spacing even */
-      max-width: min(200px, 100%);
-      height: auto;
+      max-width: 100%;
       object-fit: contain;
-      flex-shrink: 0;
+      flex-shrink: 1;
     }
 
     /* Real PNG logos — composite onto dark bg with detail preserved */
@@ -1626,13 +1624,15 @@
       }
 
       .partner-logo {
-        min-height: 44px;
-        padding: 10px 8px;
+        height: 44px;
+        padding: 6px 4px;
+        overflow: hidden;
       }
 
       .partner-logo svg,
       .partner-logo img {
-        max-height: 22px;
+        height: 18px;
+        width: auto;
         max-width: 100%;
       }
 
@@ -1664,6 +1664,12 @@
       .card-win-num { font-size: 30px; }
       .card-win-num .unit { font-size: 21px; }
       .card-win-sub { font-size: 17px; }
+
+      /* Blanket overflow guard for all sections on tablet/mobile */
+      .stats-strip, .partners, .powerhouse, .testimonials,
+      .two-outcomes, .usecases, .cta-banner {
+        overflow: hidden;
+      }
     }
 
     /* ─── CTA BANNER ─── */
@@ -2319,12 +2325,14 @@
         padding: 24px 16px 28px;
       }
       .partner-logo {
-        min-height: 40px;
-        padding: 8px 6px;
+        height: 40px;
+        padding: 5px 4px;
+        overflow: hidden;
       }
       .partner-logo svg,
       .partner-logo img {
-        max-height: 20px;
+        height: 16px;
+        width: auto;
         max-width: 100%;
       }
       .usecases-inner { padding: 0 16px; }
