@@ -2369,9 +2369,264 @@
       .footer-inner { grid-template-columns: 1fr; }
       .site-footer { padding: 44px 20px 28px; }
     }
+    /* ─── CONTACT MODAL ─── */
+    .cmodal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(5, 8, 18, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+
+    .cmodal-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cmodal {
+      background: #0d1427;
+      border: 1px solid #162140;
+      width: 100%;
+      max-width: 480px;
+      padding: 40px 36px 36px;
+      position: relative;
+      transform: translateY(18px);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cmodal-backdrop.open .cmodal {
+      transform: translateY(0);
+    }
+
+    .cmodal-close {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: none;
+      border: none;
+      color: #5a6480;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: color 0.15s;
+    }
+
+    .cmodal-close:hover { color: #f8f9fb; }
+
+    .cmodal-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #e07b35;
+      margin-bottom: 10px;
+    }
+
+    .cmodal h2 {
+      font-size: 22px;
+      font-weight: 300;
+      color: #f8f9fb;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .cmodal-sub {
+      font-size: 13px;
+      color: #5a6480;
+      margin-bottom: 28px;
+    }
+
+    .cmodal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cmodal-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .cmodal-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cmodal-field label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8f9ab8;
+    }
+
+    .cmodal-field input,
+    .cmodal-field textarea,
+    .cmodal-field select {
+      background: #111b35;
+      border: 1px solid #162140;
+      color: #f8f9fb;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 300;
+      padding: 10px 13px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 2px;
+    }
+
+    .cmodal-field input:focus,
+    .cmodal-field textarea:focus,
+    .cmodal-field select:focus {
+      border-color: #e07b35;
+    }
+
+    .cmodal-field input::placeholder,
+    .cmodal-field textarea::placeholder { color: #2a3d6e; }
+
+    .cmodal-field select option { background: #0d1427; }
+
+    .cmodal-field textarea { resize: vertical; min-height: 90px; }
+
+    .cmodal-submit {
+      margin-top: 6px;
+      padding: 13px 24px;
+      background: #e07b35;
+      color: #fff;
+      border: none;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .cmodal-submit:hover { background: #f09050; }
+    .cmodal-submit:disabled { background: #2a3d6e; cursor: not-allowed; }
+
+    .cmodal-success {
+      display: none;
+      text-align: center;
+      padding: 24px 0 8px;
+    }
+
+    .cmodal-success-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .cmodal-success h3 {
+      font-size: 20px;
+      font-weight: 300;
+      color: #f8f9fb;
+      margin-bottom: 8px;
+    }
+
+    .cmodal-success p {
+      font-size: 14px;
+      color: #5a6480;
+    }
+
+    .cmodal-error {
+      display: none;
+      font-size: 13px;
+      color: #f07060;
+      margin-top: -4px;
+    }
+
+    @media (max-width: 480px) {
+      .cmodal { padding: 32px 20px 24px; }
+      .cmodal-row { grid-template-columns: 1fr; gap: 14px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- ─── CONTACT MODAL ─── -->
+  <div class="cmodal-backdrop" id="cmodal-backdrop" role="dialog" aria-modal="true" aria-labelledby="cmodal-title">
+    <div class="cmodal" id="cmodal">
+      <button class="cmodal-close" id="cmodal-close" aria-label="Close">&#x2715;</button>
+
+      <div id="cmodal-form-wrap">
+        <p class="cmodal-eyebrow">Free proposal · 5 business days</p>
+        <h2 id="cmodal-title">Let's map your<br>AI opportunity</h2>
+        <p class="cmodal-sub">Tell us a bit about your business and we'll come back with a focused plan — no fluff, no obligation.</p>
+
+        <!-- ── Web3Forms: get your free access key at web3forms.com ── -->
+        <!-- Enter b.hlushko@insart.com there and paste the key below  -->
+        <form class="cmodal-form" id="cmodal-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_KEY_HERE"/>
+          <input type="hidden" name="subject" value="New AI Proposal Request — INSART AI Practice"/>
+          <input type="hidden" name="from_name" value="INSART AI Practice Site"/>
+          <input type="hidden" name="redirect" value="false"/>
+          <input type="checkbox" name="botcheck" style="display:none"/>
+
+          <div class="cmodal-row">
+            <div class="cmodal-field">
+              <label for="cf-name">Your name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="cmodal-field">
+              <label for="cf-company">Company</label>
+              <input type="text" id="cf-company" name="company" placeholder="Acme Corp"/>
+            </div>
+          </div>
+
+          <div class="cmodal-field">
+            <label for="cf-email">Work email</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@acmecorp.com" required/>
+          </div>
+
+          <div class="cmodal-field">
+            <label for="cf-industry">Industry</label>
+            <select id="cf-industry" name="industry">
+              <option value="">Select your industry…</option>
+              <option>Manufacturing</option>
+              <option>Metallurgy / Steel</option>
+              <option>Agriculture</option>
+              <option>Logistics &amp; Distribution</option>
+              <option>Food Production</option>
+              <option>Mining</option>
+              <option>Oil &amp; Gas</option>
+              <option>Construction</option>
+              <option>Energy &amp; Utilities</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="cmodal-field">
+            <label for="cf-message">What would you like AI to solve? <span style="color:#2a3d6e;font-weight:300;">(optional)</span></label>
+            <textarea id="cf-message" name="message" placeholder="e.g. We lose too many hours reconciling inventory between four plants…"></textarea>
+          </div>
+
+          <p class="cmodal-error" id="cmodal-error">Something went wrong — please try again or email us directly at b.hlushko@insart.com</p>
+
+          <button type="submit" class="cmodal-submit" id="cmodal-submit">Send Request →</button>
+        </form>
+      </div>
+
+      <div class="cmodal-success" id="cmodal-success">
+        <div class="cmodal-success-icon">✓</div>
+        <h3>Request received</h3>
+        <p>We'll be in touch within 1–2 business days with a focused proposal for your operation.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ─── HEADER ─── -->
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
@@ -3148,6 +3403,72 @@
 
   <!-- ─── SCRIPTS ─── -->
   <script>
+    /* ── Contact modal ── */
+    (function () {
+      const backdrop = document.getElementById('cmodal-backdrop');
+      const closeBtn = document.getElementById('cmodal-close');
+      const form     = document.getElementById('cmodal-form');
+      const submit   = document.getElementById('cmodal-submit');
+      const success  = document.getElementById('cmodal-success');
+      const errMsg   = document.getElementById('cmodal-error');
+      const drawer   = document.getElementById('nav-drawer');
+
+      function openModal(e) {
+        const href = this && this.getAttribute && this.getAttribute('href');
+        if (href === '#proposal' || (this && this.classList && (this.classList.contains('btn-primary') || this.classList.contains('pill')))) {
+          if (e) e.preventDefault();
+          backdrop.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => { const first = form && form.querySelector('input[type="text"]'); if(first) first.focus(); }, 120);
+        }
+      }
+
+      function closeModal() {
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      /* Intercept every CTA — buttons, links, pills */
+      document.querySelectorAll(
+        'a[href="#proposal"], a.btn-primary, a.pill, button.btn-primary'
+      ).forEach(el => el.addEventListener('click', openModal));
+
+      /* Close triggers */
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      /* Form submit via fetch (Web3Forms JSON endpoint) */
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errMsg.style.display = 'none';
+        submit.disabled = true;
+        submit.textContent = 'Sending…';
+
+        const data = new FormData(form);
+        data.set('redirect', 'false');
+
+        try {
+          const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+          const json = await res.json();
+          if (json.success) {
+            document.getElementById('cmodal-form-wrap').style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            throw new Error(json.message || 'error');
+          }
+        } catch (_) {
+          errMsg.style.display = 'block';
+          submit.disabled = false;
+          submit.textContent = 'Send Request →';
+        }
+      });
+    })();
+
     /* ── Mobile hamburger ── */
     (function () {
       const btn    = document.getElementById('nav-hamburger');
