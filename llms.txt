@@ -8,17 +8,17 @@ INSART is the same engineering organization known for deep fintech work; this of
 
 ## Main
 
-- [AI Growth Engineering landing](https://insart.com/ai/): Positioning, outcomes, credibility, case-study carousel, testimonials, and CTA to request an AI plan.
+- [AI Growth Engineering landing](https://ai-practice-kohl.vercel.app/): Positioning, outcomes, credibility, case-study carousel, testimonials, and CTA to request an AI plan.
 
 ## Case studies
 
-- [Metallurgy — coil & stock vision](https://insart.com/ai/cases/metallurgy-coil-vision.html): Multi-plant steel / service center; vision + WMS; coil ID and yard reconciliation.
-- [Manufacturing — predictive maintenance](https://insart.com/ai/cases/manufacturing-predictive-maintenance.html): Many lines; vibration, temperature, and MES signals into one ranked maintenance queue.
-- [Agriculture — crop intelligence](https://insart.com/ai/cases/agriculture-crop-intelligence.html): Imagery and soil sensors; early stress and pest risk.
-- [Logistics — fleet routing](https://insart.com/ai/cases/logistics-fleet-routing.html): LTL routing vs traffic, dwell, and dock constraints.
-- [Food production — vision QC](https://insart.com/ai/cases/food-line-vision-qc.html): Inline vision QC and batch traceability.
-- [Mining — targeted extraction](https://insart.com/ai/cases/mining-targeted-extraction.html): Geology-aware targeting and pit routing with safety overlays.
-- [Oil & gas — pipeline monitoring](https://insart.com/ai/cases/oilgas-pipeline-monitoring.html): Infrared and anomaly models along long right-of-way.
+- [Metallurgy — coil & stock vision](https://ai-practice-kohl.vercel.app/cases/metallurgy-coil-vision.html): Multi-plant steel / service center; vision + WMS; coil ID and yard reconciliation.
+- [Manufacturing — predictive maintenance](https://ai-practice-kohl.vercel.app/cases/manufacturing-predictive-maintenance.html): Many lines; vibration, temperature, and MES signals into one ranked maintenance queue.
+- [Agriculture — crop intelligence](https://ai-practice-kohl.vercel.app/cases/agriculture-crop-intelligence.html): Imagery and soil sensors; early stress and pest risk.
+- [Logistics — fleet routing](https://ai-practice-kohl.vercel.app/cases/logistics-fleet-routing.html): LTL routing vs traffic, dwell, and dock constraints.
+- [Food production — vision QC](https://ai-practice-kohl.vercel.app/cases/food-line-vision-qc.html): Inline vision QC and batch traceability.
+- [Mining — targeted extraction](https://ai-practice-kohl.vercel.app/cases/mining-targeted-extraction.html): Geology-aware targeting and pit routing with safety overlays.
+- [Oil & gas — pipeline monitoring](https://ai-practice-kohl.vercel.app/cases/oilgas-pipeline-monitoring.html): Infrared and anomaly models along long right-of-way.
 
 ## Contact
 
