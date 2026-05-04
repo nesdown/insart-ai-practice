@@ -398,6 +398,10 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: min(100%, 72vw);
     }
 
     /* H1 — exact Hero.tsx h1 pattern */
@@ -1337,6 +1341,10 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: min(100%, 75vw);
     }
 
     .section-h2 {
@@ -2284,9 +2292,12 @@
         justify-content: center;
         box-sizing: border-box;
       }
-      .eyebrow-row { gap: 8px; margin-bottom: 24px; }
-      .eyebrow-text { font-size: 10px; letter-spacing: 0.18em; }
-      .eyebrow-rule { width: 22px; }
+      .eyebrow-row { gap: 6px; margin-bottom: 24px; flex-wrap: wrap; }
+      .eyebrow-text { font-size: 9px; letter-spacing: 0.14em; }
+      .eyebrow-rule { width: 16px; flex-shrink: 0; }
+      .section-eyebrow { flex-wrap: wrap; }
+      .section-eyebrow .text { font-size: 9px; letter-spacing: 0.14em; }
+      .section-eyebrow .rule { width: 18px; flex-shrink: 0; }
       .pills-marquee { margin-bottom: 56px; }
       .pill { padding: 7px 12px; font-size: 11px; }
       .stats-inner {
