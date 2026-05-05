@@ -9,6 +9,7 @@ INSART is the same engineering organization known for deep fintech work; this of
 ## Main
 
 - [AI Growth Engineering landing](https://ai-practice-kohl.vercel.app/): Positioning, outcomes, credibility, case-study carousel, testimonials, and CTA to request an AI plan.
+- [Capabilities & Engagement deck](https://ai-practice-kohl.vercel.app/deck.html): 17-slide sales deck used by INSART BDRs in qualified conversations — covers the offering, methodology, capabilities matrix, tech stack, three case studies, outcomes, engagement model, and competitive comparison.
 
 ## Case studies
 

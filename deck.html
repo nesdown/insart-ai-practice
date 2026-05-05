@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+  <meta name="description" content="INSART AI Powerhouse — Capabilities & Engagement deck for industrial AI integration. For BDR / sales conversations."/>
+  <title>INSART AI — Capabilities Deck</title>
+  <link rel="canonical" href="https://ai-practice-kohl.vercel.app/deck.html"/>
+  <meta name="theme-color" content="#0a0f1e"/>
+
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="INSART"/>
+  <meta property="og:url" content="https://ai-practice-kohl.vercel.app/deck.html"/>
+  <meta property="og:title" content="AI Powerhouse by INSART — Capabilities Deck"/>
+  <meta property="og:description" content="Industrial AI integration — capabilities, methodology, case studies, and engagement model. Built for BDR conversations."/>
+  <meta property="og:image" content="https://ai-practice-kohl.vercel.app/og-ai-practice.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://ai-practice-kohl.vercel.app/og-ai-practice.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── DESIGN TOKENS (shared with main site) ─── */
+    :root {
+      --bg:        #0a0f1e;
+      --bg2:       #0d1427;
+      --bg3:       #111b35;
+      --n700:      #162140;
+      --n600:      #1e2d52;
+      --n500:      #2a3d6e;
+      --s50:       #f8f9fb;
+      --s200:      #e2e6ef;
+      --s300:      #c8d0e0;
+      --s400:      #8f9ab8;
+      --s500:      #5a6480;
+      --accent:    #e07b35;
+      --accent-lt: #f09050;
+      --accent-md: #c86a20;
+      --font:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { overflow: hidden; height: 100%; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--s50);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.55;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    ::selection { background: rgba(224,123,53,0.25); color: var(--s50); }
+
+    /* ─── DECK CHROME ─── */
+    .deck-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      background: linear-gradient(180deg, rgba(10,15,30,0.92) 0%, rgba(10,15,30,0) 100%);
+      pointer-events: none;
+      backdrop-filter: blur(0px);
+    }
+
+    .deck-header > * { pointer-events: auto; }
+
+    .deck-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--s400);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .deck-brand:hover { color: var(--s50); }
+
+    .deck-brand-mark {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .deck-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 6px 14px;
+      border: 1px solid rgba(224,123,53,0.3);
+      background: rgba(10,15,30,0.6);
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+    }
+
+    .deck-counter {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--s400);
+      font-variant-numeric: tabular-nums;
+      padding: 6px 14px;
+      background: rgba(10,15,30,0.6);
+      border: 1px solid var(--n700);
+      backdrop-filter: blur(8px);
+    }
+
+    .deck-counter strong { color: var(--s50); font-weight: 600; }
+
+    /* ─── FOOTER NAV BAR ─── */
+    .deck-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 30;
+      padding: 16px 28px 20px;
+      background: linear-gradient(0deg, rgba(10,15,30,0.92) 0%, rgba(10,15,30,0) 100%);
+      pointer-events: none;
+    }
+
+    .deck-progress-track {
+      width: 100%;
+      height: 2px;
+      background: var(--n700);
+      pointer-events: auto;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    .deck-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .deck-progress-track:hover { height: 4px; transition: height 0.15s; }
+
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      pointer-events: auto;
+    }
+
+    .deck-controls-left,
+    .deck-controls-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .deck-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--n500);
+      background: rgba(10,15,30,0.6);
+      color: var(--s300);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+
+    .deck-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(224,123,53,0.08);
+    }
+
+    .deck-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    .deck-btn-cta {
+      width: auto;
+      padding: 0 18px;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .deck-btn-cta:hover {
+      background: var(--accent-lt);
+      border-color: var(--accent-lt);
+      color: #fff;
+    }
+
+    .deck-shortcut {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--s500);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .deck-shortcut kbd {
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 7px;
+      background: var(--bg3);
+      border: 1px solid var(--n500);
+      border-radius: 3px;
+      color: var(--s300);
+    }
+
+    @media (max-width: 720px) {
+      .deck-shortcut { display: none; }
+      .deck-header { padding: 12px 16px; }
+      .deck-footer { padding: 10px 16px 14px; }
+      .deck-section-label { display: none; }
+    }
+
+    /* ─── SLIDE ENGINE ─── */
+    .deck-stage {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 96px 96px 110px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(40px);
+      transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  visibility 0s linear 0.5s;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+                  transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+                  visibility 0s linear 0s;
+    }
+
+    .slide.prev {
+      transform: translateX(-40px);
+    }
+
+    .slide-inner {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 720px) {
+      .slide { padding: 80px 20px 88px; }
+    }
+
+    /* ─── COMMON SLIDE COMPONENTS ─── */
+    .slide-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .slide-eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .slide-h1 {
+      font-size: clamp(40px, 6vw, 78px);
+      font-weight: 200;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: var(--s50);
+      margin-bottom: 24px;
+    }
+
+    .slide-h1 .accent { color: var(--accent); font-weight: 300; }
+
+    .slide-h2 {
+      font-size: clamp(32px, 4.6vw, 56px);
+      font-weight: 300;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      color: var(--s50);
+      margin-bottom: 20px;
+    }
+
+    .slide-h2 .accent { color: var(--accent); }
+
+    .slide-lede {
+      font-size: clamp(18px, 1.6vw, 22px);
+      font-weight: 300;
+      color: var(--s300);
+      line-height: 1.55;
+      max-width: 820px;
+      margin-bottom: 36px;
+    }
+
+    .slide-lede strong { color: var(--s50); font-weight: 500; }
+
+    .slide-stat {
+      font-size: clamp(72px, 12vw, 168px);
+      font-weight: 200;
+      letter-spacing: -0.04em;
+      color: var(--s50);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .slide-stat .accent { color: var(--accent); font-weight: 300; }
+
+    /* Two-col layout */
+    .slide-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .slide-cols-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .slide-cols-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 920px) {
+      .slide-cols { grid-template-columns: 1fr; gap: 32px; }
+      .slide-cols-3 { grid-template-columns: 1fr; gap: 14px; }
+      .slide-cols-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    }
+
+    /* Cards / panels */
+    .panel {
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      padding: 28px 30px;
+      transition: border-color 0.25s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel:hover {
+      border-color: var(--n500);
+      transform: translateY(-2px);
+    }
+
+    .panel-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .panel h3 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--s50);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .panel p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--s400);
+      line-height: 1.6;
+    }
+
+    .panel-accent-bar {
+      position: absolute;
+      top: 0; left: 0;
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    /* Bullet list */
+    .b-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .b-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--n700);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--s300);
+      line-height: 1.5;
+    }
+
+    .b-list li:last-child { border-bottom: none; }
+
+    .b-list li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+    }
+
+    .b-list li strong { color: var(--s50); font-weight: 500; }
+
+    /* Metric chips */
+    .m-chip {
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      padding: 22px 22px 20px;
+      position: relative;
+      transition: border-color 0.25s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .m-chip:hover {
+      border-color: var(--n500);
+      transform: translateY(-2px);
+    }
+
+    .m-chip::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--accent);
+    }
+
+    .m-chip-val {
+      display: block;
+      font-size: 36px;
+      font-weight: 200;
+      letter-spacing: -0.02em;
+      color: var(--s50);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .m-chip-val em { font-style: normal; color: var(--accent); font-size: 0.7em; }
+
+    .m-chip-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--s500);
+    }
+
+    /* Industry tag pill */
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--s300);
+      background: var(--bg3);
+      border: 1px solid var(--n500);
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+
+    .tag-pill:hover {
+      color: var(--s50);
+      border-color: var(--accent);
+      background: rgba(224,123,53,0.06);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Quote block */
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding: 12px 0 12px 28px;
+      max-width: 720px;
+    }
+
+    .quote p {
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--s200);
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
+    .quote cite {
+      font-size: 13px;
+      font-style: normal;
+      color: var(--s500);
+      letter-spacing: 0.05em;
+    }
+
+    .quote cite strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Comparison table */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 1px solid var(--n700);
+    }
+
+    .compare > div {
+      padding: 18px 20px;
+      border-right: 1px solid var(--n700);
+      border-bottom: 1px solid var(--n700);
+      font-size: 14px;
+      color: var(--s300);
+      font-weight: 300;
+    }
+
+    .compare > div:nth-child(3n) { border-right: none; }
+
+    .compare-head {
+      background: var(--bg2);
+      font-weight: 600 !important;
+      font-size: 11px !important;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--s400) !important;
+    }
+
+    .compare-head.us { color: var(--accent) !important; }
+
+    .compare-row-label {
+      font-weight: 500 !important;
+      color: var(--s50) !important;
+      background: rgba(13, 20, 39, 0.5);
+    }
+
+    .compare .yes { color: var(--accent); font-weight: 500; }
+    .compare .no  { color: var(--s500); }
+
+    @media (max-width: 720px) {
+      .compare { grid-template-columns: 1fr; }
+      .compare > div:nth-child(3n) { border-right: 0; }
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 24px;
+    }
+
+    .tl-step {
+      position: relative;
+      padding: 24px 24px 24px 0;
+    }
+
+    .tl-step::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--n600);
+    }
+
+    .tl-step::after {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 0;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .tl-step:last-child::before { background: linear-gradient(to right, var(--n600), transparent); }
+
+    .tl-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    .tl-step h4 {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--s50);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .tl-step p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--s400);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 920px) {
+      .timeline { grid-template-columns: 1fr; gap: 8px; }
+      .tl-step { padding: 18px 0 18px 24px; }
+      .tl-step::before {
+        top: 0; bottom: 0; left: 5px; right: auto;
+        width: 1px; height: auto;
+        background: var(--n600);
+      }
+      .tl-step::after { top: 22px; left: 0; }
+      .tl-num { margin-top: 0; }
+    }
+
+    /* Tech stack chips with logos */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .stack-cell {
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      padding: 18px 20px;
+      transition: border-color 0.2s;
+    }
+
+    .stack-cell:hover { border-color: var(--accent); }
+
+    .stack-cell-h {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .stack-cell-list {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--s300);
+      line-height: 1.55;
+    }
+
+    /* ─── SLIDE 1 (cover) specifics ─── */
+    .cover {
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+      background:
+        radial-gradient(ellipse 800px 600px at 80% 30%, rgba(30,45,82,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 600px 400px at 20% 80%, rgba(224,123,53,0.08) 0%, transparent 65%);
+    }
+
+    .cover-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .cover-inner {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .cover-mark {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 56px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .cover-mark::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .cover h1 {
+      font-size: clamp(56px, 9vw, 132px);
+      font-weight: 200;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      color: var(--s50);
+      margin-bottom: 24px;
+    }
+
+    .cover h1 .accent { color: var(--accent); font-weight: 300; }
+
+    .cover-sub {
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 300;
+      color: var(--s300);
+      line-height: 1.4;
+      max-width: 720px;
+      margin-bottom: 56px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      padding-top: 28px;
+      border-top: 1px solid var(--n700);
+      max-width: 720px;
+    }
+
+    .cover-meta-item strong {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--s500);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .cover-meta-item span {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--s200);
+    }
+
+    /* Big stat slide */
+    .stat-slide {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .stat-slide .slide-inner {
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .stat-slide-source {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--s500);
+      margin-top: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Diagram blocks */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--n700);
+    }
+
+    .pillar {
+      padding: 34px 28px 32px;
+      border-right: 1px solid var(--n700);
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    .pillar:last-child { border-right: none; }
+    .pillar:hover { background: rgba(224,123,53,0.03); }
+
+    .pillar-num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 18px;
+      padding: 4px 10px;
+      border: 1px solid rgba(224,123,53,0.3);
+    }
+
+    .pillar h3 {
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--s50);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .pillar p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--s400);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .pillar-tags {
+      font-size: 12px;
+      color: var(--s500);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 920px) {
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { border-right: 0; border-bottom: 1px solid var(--n700); }
+      .pillar:last-child { border-bottom: none; }
+    }
+
+    /* Capabilities matrix */
+    .cap-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .cap-cell {
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      padding: 22px 24px 24px;
+      transition: border-color 0.2s, transform 0.3s;
+    }
+
+    .cap-cell:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .cap-icon {
+      width: 32px; height: 32px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .cap-cell h4 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--s50);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .cap-cell p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--s400);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 920px) { .cap-matrix { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .cap-matrix { grid-template-columns: 1fr; } }
+
+    /* Case study slide */
+    .case-slide-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 56px;
+      align-items: stretch;
+    }
+
+    .case-img {
+      background-size: cover;
+      background-position: center;
+      border: 1px solid var(--n700);
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .case-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,15,30,0.4) 0%, rgba(10,15,30,0.7) 100%);
+    }
+
+    .case-content { display: flex; flex-direction: column; }
+
+    .case-industry {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .case-title {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--s50);
+      margin-bottom: 18px;
+      letter-spacing: -0.015em;
+    }
+
+    .case-summary {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--s300);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .case-metric {
+      padding: 16px 18px;
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      border-left: 2px solid var(--accent);
+    }
+
+    .case-metric-val {
+      display: block;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--s50);
+      letter-spacing: -0.01em;
+    }
+
+    .case-metric-val em { font-style: normal; color: var(--accent); }
+
+    .case-metric-lbl {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--s500);
+      margin-top: 4px;
+      display: block;
+    }
+
+    @media (max-width: 920px) {
+      .case-slide-grid { grid-template-columns: 1fr; }
+      .case-img { min-height: 200px; }
+    }
+
+    /* Engagement / pricing */
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .price-card {
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      padding: 32px 32px 36px;
+      position: relative;
+    }
+
+    .price-card.feature {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(224,123,53,0.04) 0%, var(--bg2) 100%);
+    }
+
+    .price-card.feature::before {
+      content: "Recommended";
+      position: absolute;
+      top: -1px; right: -1px;
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .price-name {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .price-tag {
+      font-size: 36px;
+      font-weight: 200;
+      color: var(--s50);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    .price-tag em { font-style: normal; color: var(--accent); font-size: 0.55em; font-weight: 400; }
+
+    .price-tag-sub {
+      font-size: 13px;
+      color: var(--s500);
+      margin-bottom: 22px;
+    }
+
+    .price-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+    }
+
+    .price-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--n700);
+      font-size: 14px;
+      color: var(--s300);
+      font-weight: 300;
+      display: flex;
+      gap: 10px;
+    }
+
+    .price-list li::before {
+      content: "→";
+      color: var(--accent);
+    }
+
+    .price-list li:last-child { border-bottom: none; }
+
+    @media (max-width: 920px) { .price-grid { grid-template-columns: 1fr; } }
+
+    /* CTA slide */
+    .cta-slide {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse 600px 500px at 50% 50%, rgba(224,123,53,0.08) 0%, transparent 70%);
+    }
+
+    .cta-slide .slide-inner {
+      max-width: 820px;
+      text-align: center;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .deck-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .deck-cta-primary:hover { background: var(--accent-lt); }
+
+    .deck-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: transparent;
+      color: var(--s200);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      border: 1px solid var(--n500);
+    }
+
+    .deck-cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .cta-meta {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid var(--n700);
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cta-meta-item {
+      font-size: 13px;
+      color: var(--s400);
+    }
+
+    .cta-meta-item strong {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--s500);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cta-meta-item a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .cta-meta-item a:hover { color: var(--accent-lt); }
+
+    /* ─── OVERVIEW MODE (slide grid) ─── */
+    .deck-overview {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(5, 8, 18, 0.96);
+      backdrop-filter: blur(12px);
+      display: none;
+      padding: 80px 40px 40px;
+      overflow-y: auto;
+    }
+
+    .deck-overview.open { display: block; }
+
+    .overview-head {
+      max-width: 1280px;
+      margin: 0 auto 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .overview-head h2 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .overview-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .overview-thumb {
+      aspect-ratio: 16 / 10;
+      background: var(--bg2);
+      border: 1px solid var(--n700);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px 16px;
+      transition: border-color 0.2s, transform 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overview-thumb:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .overview-thumb.current {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(224,123,53,0.3);
+    }
+
+    .overview-thumb-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+    }
+
+    .overview-thumb-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--s50);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .overview-close {
+      background: none;
+      border: 1px solid var(--n500);
+      color: var(--s400);
+      padding: 8px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .overview-close:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── PRINT TO PDF ─── */
+    @media print {
+      html, body { background: #0a0f1e; height: auto; overflow: visible; }
+      .deck-header, .deck-footer, .deck-overview { display: none !important; }
+      .deck-stage { position: static; }
+      .slide {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        page-break-after: always;
+        height: 100vh;
+        padding: 60px 50px;
+      }
+      .slide:last-child { page-break-after: avoid; }
+    }
+
+    /* ─── STAR / BG ─── */
+    .deck-bg-fx {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 800px 600px at 70% 20%, rgba(30,45,82,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 300px at 10% 90%, rgba(224,123,53,0.04) 0%, transparent 70%);
+    }
+
+    /* small helpers */
+    .muted { color: var(--s500); }
+    .accent { color: var(--accent); }
+    .nowrap { white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+  <div class="deck-bg-fx" aria-hidden="true"></div>
+
+  <!-- ─── HEADER ─── -->
+  <header class="deck-header">
+    <a href="index.html" class="deck-brand" title="Back to site">
+      <span class="deck-brand-mark"></span>
+      INSART <span style="opacity:0.5;">|</span> AI Powerhouse
+    </a>
+    <span class="deck-section-label" id="deck-section-label">Cover</span>
+    <span class="deck-counter"><strong id="deck-current">1</strong> / <span id="deck-total">17</span></span>
+  </header>
+
+  <!-- ─── STAGE ─── -->
+  <main class="deck-stage" id="deck-stage" aria-live="polite">
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 1 — COVER
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide cover active" data-section="Cover" data-title="AI Powerhouse">
+      <div class="cover-grid"></div>
+      <div class="cover-inner slide-inner">
+        <div class="cover-mark">INSART · Capabilities &amp; Engagement Deck · 2026</div>
+        <h1>AI Powerhouse<br><span class="accent">by INSART.</span></h1>
+        <p class="cover-sub">We engineer AI into how industrial businesses already run today — to cut costs, boost output, and tighten control of what's happening on the floor.</p>
+        <div class="cover-meta">
+          <div class="cover-meta-item">
+            <strong>Founded</strong>
+            <span>1993 · 33 years</span>
+          </div>
+          <div class="cover-meta-item">
+            <strong>Engineers</strong>
+            <span>~80 across 4 countries</span>
+          </div>
+          <div class="cover-meta-item">
+            <strong>HQ</strong>
+            <span>Boca Raton, FL · US</span>
+          </div>
+          <div class="cover-meta-item">
+            <strong>Free proposal</strong>
+            <span>4 pages · 5 business days</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 2 — THE SHIFT
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide stat-slide" data-section="The Shift" data-title="AI is no longer optional">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">The shift</p>
+        <h2 class="slide-h2">In 18 months,<br>AI moved from <span class="accent">experiment</span> to <span class="accent">expectation.</span></h2>
+        <div class="slide-stat" style="margin: 32px 0 16px;">78<span class="accent">%</span></div>
+        <p class="slide-lede">of industrial leaders now report <strong>active AI deployment</strong> in at least one production workflow — up from 23% in 2024. The companies that win this decade aren't the ones with the best AI strategy. They're the ones that <strong>shipped AI into operations first.</strong></p>
+        <p class="stat-slide-source">Source: McKinsey Global Survey on AI · 2026</p>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 3 — THE GAP
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="The Gap" data-title="Industrial AI is years behind">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">The gap</p>
+        <h2 class="slide-h2">Most industrial businesses are<br><span class="accent">stuck at the pilot stage.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 44px;">Vendors sold them dashboards. Consultants sold them strategy decks. Both stopped before AI actually changed how the floor runs. INSART picks up where they leave off.</p>
+
+        <div class="slide-cols-3">
+          <div class="panel">
+            <div class="panel-accent-bar"></div>
+            <div class="panel-num">01 · The dashboard problem</div>
+            <h3>"We have data. We can't act on it."</h3>
+            <p>Investments in BI tools and IoT sensors that produce reports nobody reads — and certainly don't change Tuesday's production schedule.</p>
+          </div>
+          <div class="panel">
+            <div class="panel-accent-bar"></div>
+            <div class="panel-num">02 · The slide-deck problem</div>
+            <h3>"We have a strategy. Nothing shipped."</h3>
+            <p>Six months and $400K spent on a roadmap from a Big Four firm. Zero AI in production. Operations team never met the consultants.</p>
+          </div>
+          <div class="panel">
+            <div class="panel-accent-bar"></div>
+            <div class="panel-num">03 · The vendor problem</div>
+            <h3>"We bought the tool. It doesn't fit."</h3>
+            <p>A best-in-class AI platform that can't read the MES, won't talk to the ERP, and treats every plant the same. Shelfware in 90 days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 4 — WHO WE ARE
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Who We Are" data-title="Engineering, not consulting">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Who we are</p>
+        <h2 class="slide-h2">33 years building software<br>that runs <span class="accent">real businesses.</span></h2>
+
+        <div class="slide-cols" style="margin-top: 36px;">
+          <div>
+            <p class="slide-lede" style="margin-bottom: 28px;">
+              INSART has spent three decades shipping production systems for some of the most regulated, demanding industries on earth. Our fintech work runs payments, lending, and trading at scale. We brought that same engineering discipline to industrial AI.
+            </p>
+            <ul class="b-list">
+              <li><strong>Founded 1993</strong> · US-incorporated, Boca Raton FL · ~80 engineers across Ukraine, Poland, Romania, and Uruguay</li>
+              <li><strong>Long-term partners</strong> · Franklin Templeton, iCapital, Accel KKR portfolio companies, Bonterra, Equifax</li>
+              <li><strong>Built on AWS, Anthropic, Google Cloud</strong> · official partner status with the platforms we deploy on</li>
+              <li><strong>$150M+ raised</strong> by INSART-built portfolio companies — we know how to ship things investors and operators trust</li>
+            </ul>
+          </div>
+          <div>
+            <div class="slide-cols-3" style="grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div class="m-chip">
+                <span class="m-chip-val">33<em>yrs</em></span>
+                <span class="m-chip-lbl">Engineering tenure</span>
+              </div>
+              <div class="m-chip">
+                <span class="m-chip-val">80<em>+</em></span>
+                <span class="m-chip-lbl">Engineers on staff</span>
+              </div>
+              <div class="m-chip">
+                <span class="m-chip-val">35<em>+</em></span>
+                <span class="m-chip-lbl">Portfolio companies built</span>
+              </div>
+              <div class="m-chip">
+                <span class="m-chip-val">$150<em>M</em></span>
+                <span class="m-chip-lbl">Raised by our builds</span>
+              </div>
+              <div class="m-chip">
+                <span class="m-chip-val">4</span>
+                <span class="m-chip-lbl">Delivery countries</span>
+              </div>
+              <div class="m-chip">
+                <span class="m-chip-val">100<em>%</em></span>
+                <span class="m-chip-lbl">In-house engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 5 — THE OFFERING
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="The Offering" data-title="The AI Plan">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">The opening offer</p>
+        <h2 class="slide-h2">The AI Plan.<br><span class="accent">Free.</span> 4 pages. <span class="accent">5 days.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">A focused, no-fluff document that maps exactly where AI pays for itself in your operation — and what it would take to ship it. Built specifically for your business, not a templated &ldquo;industry brief.&rdquo;</p>
+
+        <div class="slide-cols-4">
+          <div class="panel">
+            <div class="panel-num">Page 01</div>
+            <h3>Where the money is</h3>
+            <p>Top 3 AI opportunities in your operation, ranked by 12-month ROI and implementation risk.</p>
+          </div>
+          <div class="panel">
+            <div class="panel-num">Page 02</div>
+            <h3>What we'd build</h3>
+            <p>Concrete architecture for the highest-leverage opportunity — system diagram, integrations, data sources.</p>
+          </div>
+          <div class="panel">
+            <div class="panel-num">Page 03</div>
+            <h3>How we'd ship it</h3>
+            <p>Phased rollout plan, team composition, week-by-week milestones to first production pilot.</p>
+          </div>
+          <div class="panel">
+            <div class="panel-num">Page 04</div>
+            <h3>What it costs</h3>
+            <p>Honest budget bands, risks called out, and what success looks like at 30 / 90 / 180 days.</p>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top: 28px; font-size: 13px;">No NDA required to receive it. No commitment after. If we're not the right fit, you keep the plan.</p>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 6 — THE 3 PILLARS
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="What We Do" data-title="Identify · Build · Integrate">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">What we do</p>
+        <h2 class="slide-h2">Three things. Done well.</h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">We don't sell &ldquo;AI transformation.&rdquo; We do the three things that turn AI investments into operational outcomes.</p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <span class="pillar-num">Pillar 01</span>
+            <h3>Identify</h3>
+            <p>Walk the floor, talk to operators, sit in the war room. We find the workflows where AI moves the needle — and the ones it doesn't.</p>
+            <p class="pillar-tags">Workflow mapping · Data audit · ROI modeling · Risk scoring</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">Pillar 02</span>
+            <h3>Build</h3>
+            <p>Production-grade engineering, not POCs. Vision systems, predictive models, agent workflows that ship and stay shipped.</p>
+            <p class="pillar-tags">Computer vision · Predictive ML · LLM agents · Workflow orchestration</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">Pillar 03</span>
+            <h3>Integrate</h3>
+            <p>Wire it into your MES, ERP, WMS, SCADA, telemetry — wherever the data and the decisions actually live. No shelfware.</p>
+            <p class="pillar-tags">SAP / Oracle / NetSuite · MES / SCADA · Custom legacy · API + event streams</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 7 — METHODOLOGY / TIMELINE
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Methodology" data-title="Discover · Build · Deploy">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">How an engagement runs</p>
+        <h2 class="slide-h2">From first call to <span class="accent">first pilot</span> in <span class="accent">9 weeks.</span></h2>
+        <p class="slide-lede">We don't start with research phases that bill for months. We bring engineers into your operation in week one and ship production code by week nine.</p>
+
+        <div class="timeline">
+          <div class="tl-step">
+            <div class="tl-num">Weeks 0 – 1</div>
+            <h4>Discovery</h4>
+            <p>Site visit, system access, and data audit. We meet operators on shift, not just executives in conference rooms.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-num">Weeks 2 – 3</div>
+            <h4>Plan &amp; align</h4>
+            <p>4-page proposal becomes a signed scope with named integration points, success metrics, and stage gates.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-num">Weeks 4 – 8</div>
+            <h4>Build</h4>
+            <p>Engineering team embedded with your data and your stack. Weekly demos. Monthly steering reviews.</p>
+          </div>
+          <div class="tl-step">
+            <div class="tl-num">Week 9+</div>
+            <h4>Pilot &amp; scale</h4>
+            <p>First production pilot live on one line / one site / one fleet. Then we scale across the rest of the operation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 8 — CAPABILITIES MATRIX
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Capabilities" data-title="What we can build">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Capabilities</p>
+        <h2 class="slide-h2">What we ship into <span class="accent">production.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">Not a theoretical capability list. These are systems we have running today across our portfolio.</p>
+
+        <div class="cap-matrix">
+          <div class="cap-cell">
+            <div class="cap-icon">CV</div>
+            <h4>Computer vision</h4>
+            <p>Defect detection, inventory ID, safety monitoring. Edge or cloud, real-time or batch.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">PD</div>
+            <h4>Predictive maintenance</h4>
+            <p>Vibration, thermal, acoustic, telemetry → ranked work queue for mechanics.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">QC</div>
+            <h4>Quality &amp; QC</h4>
+            <p>Inline vision QC, statistical control, automated batch traceability for audits.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">DM</div>
+            <h4>Demand &amp; planning</h4>
+            <p>Forecasting, S&amp;OP automation, dynamic routing, inventory optimization.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">AG</div>
+            <h4>Agent workflows</h4>
+            <p>LLM-powered automation: tickets, reports, exception handling, supplier comms.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">RT</div>
+            <h4>Routing &amp; ops</h4>
+            <p>Fleet routing, pit routing, line scheduling — anywhere a sequencing problem lives.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">DA</div>
+            <h4>Data &amp; integration</h4>
+            <p>ETL pipelines, MES/ERP/SCADA bridges, event streams, and the boring plumbing that makes the rest work.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">IA</div>
+            <h4>Intelligent automation</h4>
+            <p>RPA + ML hybrid for back-office workflows: invoicing, claims, compliance, scheduling.</p>
+          </div>
+          <div class="cap-cell">
+            <div class="cap-icon">OB</div>
+            <h4>Operator-facing tools</h4>
+            <p>Mobile, tablet, and floor-display interfaces designed for shift workers, not analysts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 9 — TECH STACK
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Tech Stack" data-title="Tools & platforms">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">The stack</p>
+        <h2 class="slide-h2">Best-in-class platforms,<br>fit-for-purpose to <span class="accent">your stack.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">We are platform-agnostic with strong opinions. We pick what works for your data residency, latency, and compliance — not what wins us a partner discount.</p>
+
+        <div class="stack-grid">
+          <div class="stack-cell">
+            <div class="stack-cell-h">LLMs</div>
+            <p class="stack-cell-list">Anthropic Claude · OpenAI · Mistral · Google Gemini · Open-source (Llama, Qwen) for on-prem.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">Vision</div>
+            <p class="stack-cell-list">YOLO · Roboflow · OpenCV · Custom PyTorch · Edge inference on Jetson / Coral.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">ML / Data</div>
+            <p class="stack-cell-list">PyTorch · scikit-learn · LightGBM · Polars · DuckDB · Databricks · Snowflake.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">Cloud</div>
+            <p class="stack-cell-list">AWS (primary partner) · Google Cloud · Azure · On-prem &amp; air-gapped where required.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">Orchestration</div>
+            <p class="stack-cell-list">LangGraph · Temporal · Airflow · Dagster · Custom event-driven pipelines.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">App layer</div>
+            <p class="stack-cell-list">Next.js · React Native · Flutter · FastAPI · NestJS · Custom legacy bridges.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">ERP / MES</div>
+            <p class="stack-cell-list">SAP · Oracle NetSuite · Microsoft Dynamics · Plex · Ignition · Custom MES.</p>
+          </div>
+          <div class="stack-cell">
+            <div class="stack-cell-h">Observability</div>
+            <p class="stack-cell-list">Datadog · Grafana · Sentry · Custom drift / model monitoring dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 10 — INDUSTRIES
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Industries" data-title="Where we play">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Industries</p>
+        <h2 class="slide-h2">Operations-heavy businesses<br>where AI <span class="accent">moves the bottom line.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">If your business has plants, fleets, fields, or facilities — and margin comes from execution, not branding — we know your pain.</p>
+
+        <div class="tag-cloud" style="margin-bottom: 36px;">
+          <span class="tag-pill">Manufacturing</span>
+          <span class="tag-pill">Metallurgy &amp; Steel</span>
+          <span class="tag-pill">Agriculture</span>
+          <span class="tag-pill">Logistics &amp; Distribution</span>
+          <span class="tag-pill">Food Production</span>
+          <span class="tag-pill">Mining</span>
+          <span class="tag-pill">Oil &amp; Gas</span>
+          <span class="tag-pill">Construction</span>
+          <span class="tag-pill">Energy &amp; Utilities</span>
+          <span class="tag-pill">Pharmaceuticals</span>
+          <span class="tag-pill">Chemicals</span>
+          <span class="tag-pill">Pulp &amp; Paper</span>
+          <span class="tag-pill">Cement &amp; Aggregates</span>
+          <span class="tag-pill">Aerospace</span>
+          <span class="tag-pill">Automotive</span>
+          <span class="tag-pill">Heavy Machinery</span>
+          <span class="tag-pill">Maritime &amp; Shipping</span>
+          <span class="tag-pill">Warehousing</span>
+          <span class="tag-pill">Forestry &amp; Lumber</span>
+          <span class="tag-pill">Dairy &amp; Beverages</span>
+        </div>
+
+        <div class="quote">
+          <p>"INSART's team didn't ask us what AI we wanted. They asked where we lose money on a Tuesday. That's the difference."</p>
+          <cite><strong>VP Operations</strong> · North American steel processor</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 11 — CASE: METALLURGY
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Case Study 01" data-title="Metallurgy · coil vision">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Case study · 01 of 03</p>
+        <h2 class="slide-h2">Four plants. <span class="accent">One truth</span><br>for every ton on the floor.</h2>
+
+        <div class="case-slide-grid" style="margin-top: 28px;">
+          <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1697698532602-ccf880036281?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')"></div>
+
+          <div class="case-content">
+            <span class="case-industry">Metallurgy · Cold rolling &amp; coil logistics</span>
+            <h3 class="case-title">AI-assisted coil ID, yard reconciliation, exception routing</h3>
+            <p class="case-summary">A North American steel service center stopped fighting spreadsheets and reclaimed floor time. Computer vision + ERP automation across four plants — planners now trust the WMS.</p>
+
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="case-metric-val">$2.4<em>M</em></span>
+                <span class="case-metric-lbl">Avoided / year</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">18<em>k</em></span>
+                <span class="case-metric-lbl">Hours saved / Q</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">41<em>%</em></span>
+                <span class="case-metric-lbl">Fewer variances</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">9<em>wks</em></span>
+                <span class="case-metric-lbl">To first pilot</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 12 — CASE: MANUFACTURING
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Case Study 02" data-title="Manufacturing · predictive maintenance">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Case study · 02 of 03</p>
+        <h2 class="slide-h2">320+ lines.<br><span class="accent">One ranked queue</span> for mechanics.</h2>
+
+        <div class="case-slide-grid" style="margin-top: 28px;">
+          <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1542274368-443d694d79aa?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')"></div>
+
+          <div class="case-content">
+            <span class="case-industry">Manufacturing · Predictive maintenance</span>
+            <h3 class="case-title">Vibration, temperature, MES → one prioritized work queue</h3>
+            <p class="case-summary">Multi-line manufacturer reduced unplanned downtime and stopped firefighting. Mechanics now work from a model-ranked priority list, not a noisy alarm board.</p>
+
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="case-metric-val">37<em>%</em></span>
+                <span class="case-metric-lbl">Less unplanned downtime</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">$3.1<em>M</em></span>
+                <span class="case-metric-lbl">Annualized savings</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">320<em>+</em></span>
+                <span class="case-metric-lbl">Lines monitored</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">11<em>wks</em></span>
+                <span class="case-metric-lbl">To first pilot</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 13 — CASE: LOGISTICS
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Case Study 03" data-title="Logistics · fleet routing">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Case study · 03 of 03</p>
+        <h2 class="slide-h2">Regional LTL fleet.<br><span class="accent">Live-traffic routing</span> that holds up to dock reality.</h2>
+
+        <div class="case-slide-grid" style="margin-top: 28px;">
+          <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;w=1600&amp;q=85')"></div>
+
+          <div class="case-content">
+            <span class="case-industry">Logistics · LTL routing &amp; dispatch</span>
+            <h3 class="case-title">AI-sequenced routes vs traffic, dwell time, dock constraints</h3>
+            <p class="case-summary">A regional carrier replaced static manifest planning with adaptive sequencing. Fewer missed windows, less fuel, calmer dispatchers.</p>
+
+            <div class="case-metrics">
+              <div class="case-metric">
+                <span class="case-metric-val">14<em>%</em></span>
+                <span class="case-metric-lbl">Lower fuel cost</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">28<em>%</em></span>
+                <span class="case-metric-lbl">Fewer missed windows</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">6<em>min</em></span>
+                <span class="case-metric-lbl">Avg dwell saved / stop</span>
+              </div>
+              <div class="case-metric">
+                <span class="case-metric-val">7<em>wks</em></span>
+                <span class="case-metric-lbl">To first pilot</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 14 — OUTCOMES
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Outcomes" data-title="What clients get">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Outcomes</p>
+        <h2 class="slide-h2">What an INSART engagement<br><span class="accent">actually delivers.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">Composite outcomes from the case studies above. Your numbers will be different — but the pattern of savings, speed, and adoption holds.</p>
+
+        <div class="slide-cols-4">
+          <div class="m-chip">
+            <span class="m-chip-val">$2 – 5<em>M</em></span>
+            <span class="m-chip-lbl">Annualized savings · year 1</span>
+          </div>
+          <div class="m-chip">
+            <span class="m-chip-val">7 – 12<em>wks</em></span>
+            <span class="m-chip-lbl">To first production pilot</span>
+          </div>
+          <div class="m-chip">
+            <span class="m-chip-val">30 – 45<em>%</em></span>
+            <span class="m-chip-lbl">Fewer exception events</span>
+          </div>
+          <div class="m-chip">
+            <span class="m-chip-val">~80<em>%</em></span>
+            <span class="m-chip-lbl">Operator adoption · pilot 1</span>
+          </div>
+        </div>
+
+        <div class="slide-cols" style="margin-top: 44px;">
+          <div>
+            <h3 style="font-size: 14px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">Before INSART</h3>
+            <ul class="b-list">
+              <li>Dashboards nobody acts on; KPIs lag reality by days</li>
+              <li>Investments in AI tools that don't fit existing systems</li>
+              <li>Strategy decks from consultants — no shipped code</li>
+              <li>Operators still rely on tribal knowledge and spreadsheets</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size: 14px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">After INSART</h3>
+            <ul class="b-list">
+              <li>AI in production on the floor — not in pilot purgatory</li>
+              <li>One source of truth across MES, ERP, and operator tools</li>
+              <li>Decisions made in minutes that used to take days</li>
+              <li>Engineering team trained to extend and own the system</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 15 — ENGAGEMENT MODEL
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Engagement" data-title="How we work together">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Engagement model</p>
+        <h2 class="slide-h2">Two ways to <span class="accent">start.</span><br>One way to <span class="accent">scale.</span></h2>
+        <p class="slide-lede">Most engagements start with a focused pilot to prove ROI on one workflow. From there, we scale across plants, lines, or regions.</p>
+
+        <div class="price-grid">
+          <div class="price-card">
+            <div class="price-name">Discovery sprint</div>
+            <div class="price-tag">$0</div>
+            <div class="price-tag-sub">5 business days · The free 4-page proposal</div>
+            <ul class="price-list">
+              <li>2x discovery interviews with your operations leadership</li>
+              <li>Async review of available data &amp; system documentation</li>
+              <li>Top 3 AI opportunities ranked by ROI</li>
+              <li>Architecture &amp; rollout sketch for #1</li>
+              <li>Honest budget bands · no NDA required</li>
+            </ul>
+            <p class="muted" style="font-size: 12px;">Goal: a clear go / no-go on the highest-leverage opportunity.</p>
+          </div>
+
+          <div class="price-card feature">
+            <div class="price-name">Pilot engagement</div>
+            <div class="price-tag">$80<em>k – $220k</em></div>
+            <div class="price-tag-sub">8 – 12 weeks · Production pilot on one line / site / fleet</div>
+            <ul class="price-list">
+              <li>Embedded engineering pod (3 – 5 senior engineers)</li>
+              <li>Architecture, build, integration, and pilot deployment</li>
+              <li>Weekly demos · monthly steering reviews</li>
+              <li>Operator training &amp; runbook handover</li>
+              <li>Fixed-fee with named milestones — no T&amp;M surprises</li>
+            </ul>
+            <p class="muted" style="font-size: 12px;">Goal: one workflow live in production with measured ROI.</p>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top: 24px; font-size: 13px;">Scale phase (post-pilot) is scoped against the actual deployment surface — typically $400k – $1.5M / year for multi-site rollouts.</p>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 16 — WHY INSART vs ALTERNATIVES
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide" data-section="Why INSART" data-title="vs the alternatives">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Why INSART</p>
+        <h2 class="slide-h2">Engineering shop, with the<br>discipline of a <span class="accent">consulting firm.</span></h2>
+        <p class="slide-lede" style="margin-bottom: 36px;">Most teams pick one or the other. We deliberately built the firm to be both — strategic enough to scope honestly, technical enough to ship.</p>
+
+        <div class="compare">
+          <div class="compare-head">&nbsp;</div>
+          <div class="compare-head">Big Four / strategy</div>
+          <div class="compare-head us">INSART</div>
+
+          <div class="compare-row-label">Time to first shipped code</div>
+          <div class="no">3 – 6 months</div>
+          <div class="yes">3 – 4 weeks</div>
+
+          <div class="compare-row-label">Engineers vs slide-makers</div>
+          <div class="no">~10% engineers</div>
+          <div class="yes">100% engineering</div>
+
+          <div class="compare-row-label">Integration with your stack</div>
+          <div class="no">"Out of scope"</div>
+          <div class="yes">Day-one priority</div>
+
+          <div class="compare-row-label">Pricing model</div>
+          <div class="no">T&amp;M, blended rates</div>
+          <div class="yes">Fixed-fee milestones</div>
+
+          <div class="compare-row-label">Team continuity</div>
+          <div class="no">Rotating partners</div>
+          <div class="yes">Same team start to finish</div>
+
+          <div class="compare-row-label">Operator-facing tools</div>
+          <div class="no">"You'll need a vendor"</div>
+          <div class="yes">We build them</div>
+
+          <div class="compare-row-label">Industrial domain depth</div>
+          <div class="no">Cross-vertical generalists</div>
+          <div class="yes">Operations engineers on staff</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────
+         SLIDE 17 — CTA / NEXT STEPS
+    ──────────────────────────────────────────────────────────────────── -->
+    <section class="slide cta-slide" data-section="Next Steps" data-title="Let's start">
+      <div class="slide-inner">
+        <p class="slide-eyebrow" style="justify-content: center; display: inline-flex;">Next steps</p>
+        <h1 class="slide-h1" style="margin-bottom: 16px;">Where would AI<br>pay for itself <span class="accent">in your operation?</span></h1>
+        <p class="slide-lede" style="margin: 0 auto 8px; text-align: center;">Two ways to find out — both start the same call.</p>
+
+        <div class="cta-actions">
+          <a href="index.html#proposal" class="deck-cta-primary">Request the free 4-page proposal →</a>
+          <a href="mailto:b.hlushko@insart.com?subject=AI%20Powerhouse%20—%20intro%20call" class="deck-cta-ghost">Book a 30-min intro</a>
+        </div>
+
+        <div class="cta-meta">
+          <div class="cta-meta-item">
+            <strong>Direct contact</strong>
+            <a href="mailto:b.hlushko@insart.com">b.hlushko@insart.com</a>
+          </div>
+          <div class="cta-meta-item">
+            <strong>Site</strong>
+            <a href="https://insart.com" target="_blank" rel="noopener">insart.com</a>
+          </div>
+          <div class="cta-meta-item">
+            <strong>This deck</strong>
+            <a href="https://ai-practice-kohl.vercel.app/deck.html">ai-practice-kohl.vercel.app/deck.html</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER NAV ─── -->
+  <footer class="deck-footer">
+    <div class="deck-progress-track" id="deck-progress" title="Click to jump">
+      <div class="deck-progress-fill" id="deck-progress-fill"></div>
+    </div>
+
+    <div class="deck-controls">
+      <div class="deck-controls-left">
+        <button class="deck-btn" id="deck-prev" aria-label="Previous slide" title="Previous (←)">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="deck-btn" id="deck-next" aria-label="Next slide" title="Next (→ or Space)">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span class="deck-shortcut">
+          <kbd>←</kbd> <kbd>→</kbd> Navigate · <kbd>O</kbd> Overview · <kbd>F</kbd> Full-screen
+        </span>
+      </div>
+
+      <div class="deck-controls-right">
+        <button class="deck-btn" id="deck-overview-btn" aria-label="Overview" title="Overview (O)">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <rect x="1.5" y="1.5" width="5" height="5" stroke="currentColor" stroke-width="1.3"/>
+            <rect x="9.5" y="1.5" width="5" height="5" stroke="currentColor" stroke-width="1.3"/>
+            <rect x="1.5" y="9.5" width="5" height="5" stroke="currentColor" stroke-width="1.3"/>
+            <rect x="9.5" y="9.5" width="5" height="5" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+        </button>
+        <button class="deck-btn" id="deck-fs-btn" aria-label="Full-screen" title="Full-screen (F)">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M2 6V2h4M14 6V2h-4M2 10v4h4M14 10v4h-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <a href="index.html#proposal" class="deck-btn deck-btn-cta">Get an AI Plan →</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── OVERVIEW MODE ─── -->
+  <div class="deck-overview" id="deck-overview" aria-hidden="true">
+    <div class="overview-head">
+      <h2>All slides · Click to jump</h2>
+      <button class="overview-close" id="deck-overview-close" title="Close (Esc)">Close · Esc</button>
+    </div>
+    <div class="overview-grid" id="deck-overview-grid"></div>
+  </div>
+
+  <!-- ─── DECK ENGINE ─── -->
+  <script>
+    (function () {
+      const slides       = Array.from(document.querySelectorAll('.slide'));
+      const total        = slides.length;
+      const totalEl      = document.getElementById('deck-total');
+      const currentEl    = document.getElementById('deck-current');
+      const sectionEl    = document.getElementById('deck-section-label');
+      const progressFill = document.getElementById('deck-progress-fill');
+      const progressTrack= document.getElementById('deck-progress');
+      const prevBtn      = document.getElementById('deck-prev');
+      const nextBtn      = document.getElementById('deck-next');
+      const overviewBtn  = document.getElementById('deck-overview-btn');
+      const overview     = document.getElementById('deck-overview');
+      const overviewGrid = document.getElementById('deck-overview-grid');
+      const overviewClose= document.getElementById('deck-overview-close');
+      const fsBtn        = document.getElementById('deck-fs-btn');
+
+      let index = 0;
+
+      totalEl.textContent = total;
+
+      function go(n, animate) {
+        n = Math.max(0, Math.min(total - 1, n));
+        if (n === index && animate !== false) return;
+
+        slides.forEach((s, i) => {
+          s.classList.remove('active', 'prev');
+          if (i === n) s.classList.add('active');
+          else if (i < n) s.classList.add('prev');
+        });
+
+        index = n;
+        currentEl.textContent = n + 1;
+        const sec = slides[n].dataset.section || '';
+        sectionEl.textContent = sec;
+        progressFill.style.width = ((n + 1) / total * 100) + '%';
+
+        prevBtn.disabled = n === 0;
+        nextBtn.disabled = n === total - 1;
+
+        // sync URL hash
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', '#' + (n + 1));
+        }
+
+        // mark current in overview
+        const thumbs = overviewGrid.querySelectorAll('.overview-thumb');
+        thumbs.forEach((t, i) => t.classList.toggle('current', i === n));
+      }
+
+      function next() { go(index + 1); }
+      function prev() { go(index - 1); }
+
+      // Build overview thumbnails
+      slides.forEach((s, i) => {
+        const t = document.createElement('div');
+        t.className = 'overview-thumb';
+        if (i === 0) t.classList.add('current');
+        t.innerHTML =
+          '<span class="overview-thumb-num">Slide ' + String(i + 1).padStart(2, '0') + ' · ' +
+            (s.dataset.section || '') + '</span>' +
+          '<span class="overview-thumb-title">' + (s.dataset.title || '') + '</span>';
+        t.addEventListener('click', () => {
+          go(i);
+          closeOverview();
+        });
+        overviewGrid.appendChild(t);
+      });
+
+      function openOverview()  { overview.classList.add('open'); overview.setAttribute('aria-hidden', 'false'); }
+      function closeOverview() { overview.classList.remove('open'); overview.setAttribute('aria-hidden', 'true'); }
+      function toggleOverview(){ overview.classList.contains('open') ? closeOverview() : openOverview(); }
+
+      // Buttons
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      overviewBtn.addEventListener('click', toggleOverview);
+      overviewClose.addEventListener('click', closeOverview);
+
+      // Progress bar click → jump
+      progressTrack.addEventListener('click', function (e) {
+        const rect = progressTrack.getBoundingClientRect();
+        const ratio = (e.clientX - rect.left) / rect.width;
+        const target = Math.floor(ratio * total);
+        go(target);
+      });
+
+      // Full screen
+      fsBtn.addEventListener('click', function () {
+        if (!document.fullscreenElement) {
+          (document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen).call(document.documentElement);
+        } else {
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        }
+      });
+
+      // Keyboard
+      document.addEventListener('keydown', function (e) {
+        // ignore typing in inputs (none on this page, but safe)
+        if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+
+        if (overview.classList.contains('open')) {
+          if (e.key === 'Escape' || e.key === 'o' || e.key === 'O') { closeOverview(); e.preventDefault(); }
+          return;
+        }
+
+        switch (e.key) {
+          case 'ArrowRight':
+          case 'PageDown':
+          case ' ':
+            next(); e.preventDefault(); break;
+          case 'ArrowLeft':
+          case 'PageUp':
+            prev(); e.preventDefault(); break;
+          case 'Home':
+            go(0); e.preventDefault(); break;
+          case 'End':
+            go(total - 1); e.preventDefault(); break;
+          case 'o':
+          case 'O':
+            openOverview(); e.preventDefault(); break;
+          case 'f':
+          case 'F':
+            fsBtn.click(); e.preventDefault(); break;
+          case 'Escape':
+            if (document.fullscreenElement) document.exitFullscreen();
+            break;
+        }
+
+        // Number keys 1-9 for direct jump
+        if (e.key >= '1' && e.key <= '9') {
+          go(parseInt(e.key, 10) - 1);
+        }
+      });
+
+      // Touch / swipe
+      let touchStartX = null;
+      let touchStartY = null;
+      document.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      document.addEventListener('touchend', function (e) {
+        if (touchStartX === null) return;
+        const dx = (e.changedTouches[0].clientX - touchStartX);
+        const dy = (e.changedTouches[0].clientY - touchStartY);
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+          if (dx < 0) next(); else prev();
+        }
+        touchStartX = null;
+      }, { passive: true });
+
+      // Hash routing on load
+      function initFromHash() {
+        const m = (window.location.hash || '').match(/^#(\d+)/);
+        if (m) {
+          const n = parseInt(m[1], 10) - 1;
+          if (n >= 0 && n < total) { go(n, false); return; }
+        }
+        go(0, false);
+      }
+      initFromHash();
+
+      window.addEventListener('hashchange', initFromHash);
+    })();
+  </script>
+
+</body>
+</html>
